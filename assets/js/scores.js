@@ -8,6 +8,9 @@ function printHighScores() {
         return b.score - a.score;
     });
 
+    // Cache the ol element once before looping
+    const olEl = document.getElementById("highscores");
+
     highScores.forEach(function (score) {
 
         // Create a new li tag for each high score
@@ -15,7 +18,6 @@ function printHighScores() {
         liTag.textContent = score.initials + " - " + score.score;
 
         // Append the new li tag to the ol element and display on page
-        let olEl = document.getElementById("highscores");
         olEl.appendChild(liTag);
     });
 }
