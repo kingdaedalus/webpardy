@@ -8,6 +8,8 @@ const startBtn = document.querySelector("#start");
 const initialsEl = document.querySelector("#initials");
 const feedbackEl = document.querySelector("#feedback");
 
+const HIGH_SCORES_KEY = 'highscores';
+
 // There are the variables we'll need to keep track of for when the quiz is active.
 var currentQuestionIndex = 0;
 var time = questions.length * 15;
@@ -121,11 +123,10 @@ function saveHighScore() {
     // Get the initials from the user.
     let initials = initialsEl.value.trim();
 
-    // Get the high scores from local storage, if they don't exist, create an empty array.
+    // Only save if the user entered initials.
     if (initials !== "") {
-        let highScores = JSON.parse(window.localStorage.getItem('highscores')) || [];
+        let highScores = JSON.parse(window.localStorage.getItem(HIGH_SCORES_KEY)) || [];
 
-        // If they do exist, add the user's initials to the high scores array.
         let newScore = {
             score: time,
             initials: initials
@@ -134,7 +135,7 @@ function saveHighScore() {
         // Save the initials to local storage. Then redirect to the highscores.html page.
 
         highScores.push(newScore);
-        window.localStorage.setItem('highscores', JSON.stringify(highScores));
+        window.localStorage.setItem(HIGH_SCORES_KEY, JSON.stringify(highScores));
         window.location.href = 'highscores.html';
     }
 }
