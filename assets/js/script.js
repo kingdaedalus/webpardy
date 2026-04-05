@@ -125,7 +125,7 @@ function saveHighScore() {
     if (initials !== "") {
         let highScores = JSON.parse(window.localStorage.getItem('highscores')) || [];
 
-        // If they do exist, add the user's initials to the high scores array.
+        // Only save if the user entered initials.
         let newScore = {
             score: time,
             initials: initials
