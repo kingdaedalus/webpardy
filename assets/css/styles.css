@@ -79,7 +79,7 @@ input[type="text"] {
 }
 
 ol {
-    padding-left: 0px;
+    padding-left: 0;
     max-height: 400px;
     overflow: auto;
 }
