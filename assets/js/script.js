@@ -17,8 +17,8 @@ var timerId;
 function startQuiz() {
     // Hide the start screen, then unhide the questions screen.
     let startScreenEl = document.getElementById("start-screen");
-    startScreenEl.setAttribute("class", "hide");
-    questionsEl.removeAttribute("class");
+    startScreenEl.classList.add("hide");
+    questionsEl.classList.remove("hide");
 
     // Start the timer. Remember that this is in milliseconds!!
     timerId = setInterval(ClockTimer, 1000);
@@ -75,9 +75,9 @@ function questionClick() {
     }
 
     // This will give the answer feedback to the user.
-    feedbackEl.setAttribute('class', 'feedback');
+    feedbackEl.classList.remove('hide');
     setTimeout(function() {
-        feedbackEl.setAttribute('class', 'feedback hide');
+        feedbackEl.classList.add('hide');
     }, 1000);
 
     // Goes to the next question.
@@ -95,14 +95,14 @@ function quizEnd() {
 
     // Show the end screen.
     let endScreenEl = document.getElementById('end-screen');
-    endScreenEl.removeAttribute('class');
+    endScreenEl.classList.remove('hide');
 
     // Show the final score.
     let finalScoreEl = document.getElementById('final-score');
     finalScoreEl.textContent = time;
 
     // Hide the questions screen.
-    questionsEl.setAttribute('class', 'hide');
+    questionsEl.classList.add('hide');
 
 }
 
