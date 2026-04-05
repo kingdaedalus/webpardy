@@ -12,7 +12,7 @@ function printHighScores() {
 
         // Create a new li tag for each high score
         let liTag = document.createElement("li");
-        liTag.textContent = score.initials + " - " + score.score;
+        liTag.textContent = `${score.initials} - ${score.score}`;
 
         // Append the new li tag to the ol element and display on page
         let olEl = document.getElementById("highscores");
