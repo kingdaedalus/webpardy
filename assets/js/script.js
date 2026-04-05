@@ -7,6 +7,8 @@ const submitBtn = document.querySelector("#submit");
 const startBtn = document.querySelector("#start");
 const initialsEl = document.querySelector("#initials");
 const feedbackEl = document.querySelector("#feedback");
+const startScreenEl = document.querySelector("#start-screen");
+const titleEl = document.querySelector("#question-title");
 
 // There are the variables we'll need to keep track of for when the quiz is active.
 var currentQuestionIndex = 0;
@@ -16,7 +18,6 @@ var timerId;
 
 function startQuiz() {
     // Hide the start screen, then unhide the questions screen.
-    let startScreenEl = document.getElementById("start-screen");
     startScreenEl.setAttribute("class", "hide");
     questionsEl.removeAttribute("class");
 
@@ -31,7 +32,6 @@ function getQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
 
     // Update the text of the question screen with the current question.
-    let titleEl = document.getElementById("question-title");
     titleEl.textContent = currentQuestion.title;
 
     // Clear out old choices.
