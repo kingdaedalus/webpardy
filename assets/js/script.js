@@ -21,7 +21,7 @@ function startQuiz() {
     questionsEl.removeAttribute("class");
 
     // Start the timer. Remember that this is in milliseconds!!
-    timerId = setInterval(ClockTimer, 1000);
+    timerId = setInterval(clockTimer, 1000);
     timerEl.textContent = time;
     getQuestion();
 }
@@ -106,7 +106,7 @@ function quizEnd() {
 
 }
 
-function ClockTimer() {
+function clockTimer() {
     // Update the timer.
     time--;
     timerEl.textContent = time;
