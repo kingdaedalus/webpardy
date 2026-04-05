@@ -123,7 +123,7 @@ function saveHighScore() {
 
     // Get the high scores from local storage, if they don't exist, create an empty array.
     if (initials !== "") {
-        let highScores = JSON.parse(window.localStorage.getItem('highscores')) || [];
+        let highScores = JSON.parse(localStorage.getItem('highscores')) || [];
 
         // If they do exist, add the user's initials to the high scores array.
         let newScore = {
@@ -134,8 +134,8 @@ function saveHighScore() {
         // Save the initials to local storage. Then redirect to the highscores.html page.
 
         highScores.push(newScore);
-        window.localStorage.setItem('highscores', JSON.stringify(highScores));
-        window.location.href = 'highscores.html';
+        localStorage.setItem('highscores', JSON.stringify(highScores));
+        location.href = 'highscores.html';
     }
 }
 
