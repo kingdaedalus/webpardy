@@ -35,6 +35,9 @@ body {
     border-top: 2px solid grey;
 }
 
+.feedback--correct   { color: green; font-size: 300%; }
+.feedback--incorrect { color: red;   font-size: 300%; }
+
 .timer {
     position: absolute;
     top: 10px;
