@@ -1,7 +1,7 @@
 function printHighScores() {
 
     // Get the high scores from local storage or the array
-    let highScores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    let highScores = JSON.parse(localStorage.getItem("highscores")) || [];
 
     // Sort the scores in descending order
     highScores.sort(function (a, b) {
@@ -21,8 +21,8 @@ function printHighScores() {
 }
 
 function clearHighScores() {
-    window.localStorage.removeItem("highscores");
-    window.location.reload();
+    localStorage.removeItem("highscores");
+    location.reload();
 }
 
 document.getElementById("clear").onclick = clearHighScores;
