@@ -25,7 +25,7 @@ function clearHighScores() {
     window.location.reload();
 }
 
-document.getElementById("clear").onclick = clearHighScores;
+document.getElementById("clear").addEventListener('click', clearHighScores);
 
 // Run the function when the page loads
 printHighScores();

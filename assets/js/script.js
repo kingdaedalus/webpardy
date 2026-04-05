@@ -47,16 +47,16 @@ function getQuestion() {
         choiceNode.textContent = i + 1 + ". " + choice;
 
         // attach click event listener to each choice
-        choiceNode.onclick = questionClick;
+        choiceNode.addEventListener('click', questionClick);
 
         // display on the page
         choicesEl.appendChild(choiceNode);
     });
 }
 
-function questionClick() {
+function questionClick(event) {
     // Did user guess the correct answer?
-    if (this.value !== questions[currentQuestionIndex].answer) {
+    if (event.target.value !== questions[currentQuestionIndex].answer) {
         // IF not, remove an extra 15 seconds from the timer.
         time -= 15;
 
@@ -145,8 +145,8 @@ function checkForEnter(event) {
     }
 }
 
-submitBtn.onclick = saveHighScore;
+submitBtn.addEventListener('click', saveHighScore);
 
-startBtn.onclick = startQuiz;
+startBtn.addEventListener('click', startQuiz);
 
-initialsEl.onkeyup = checkForEnter;
+initialsEl.addEventListener('keydown', checkForEnter);
