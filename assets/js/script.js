@@ -66,18 +66,17 @@ function questionClick() {
         // This puts the new time on the timer.
         timerEl.textContent = time;
         feedbackEl.textContent = 'Incorrect!';
-        feedbackEl.style.color = 'red';
-        feedbackEl.style.fontSize = '300%';
+        feedbackEl.classList.add('feedback--incorrect');
     } else {
         feedbackEl.textContent = 'Correct!';
-        feedbackEl.style.color = 'green';
-        feedbackEl.style.fontSize = '300%';
+        feedbackEl.classList.add('feedback--correct');
     }
 
     // This will give the answer feedback to the user.
     feedbackEl.setAttribute('class', 'feedback');
     setTimeout(function() {
         feedbackEl.setAttribute('class', 'feedback hide');
+        feedbackEl.classList.remove('feedback--correct', 'feedback--incorrect');
     }, 1000);
 
     // Goes to the next question.
