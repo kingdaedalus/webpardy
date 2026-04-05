@@ -9,9 +9,9 @@ const initialsEl = document.querySelector("#initials");
 const feedbackEl = document.querySelector("#feedback");
 
 // There are the variables we'll need to keep track of for when the quiz is active.
-var currentQuestionIndex = 0;
-var time = questions.length * 15;
-var timerId;
+let currentQuestionIndex = 0;
+let time = questions.length * 15;
+let timerId;
 
 
 function startQuiz() {
